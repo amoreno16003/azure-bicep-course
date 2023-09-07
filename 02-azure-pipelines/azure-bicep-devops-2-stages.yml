@@ -74,15 +74,6 @@ stages:
 
     steps:
     - task: AzureCLI@2
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Azure subscription 1(bc7c051a-c439-4898-b227-d199d6240d8e)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az deployment group create --resource-group $(resourceGroupName) \
-        --template-file $(templateFile) \
-        --parameters webAppName=$(webAppName)
       displayName: Deploy Bicep To Azure
       inputs:
         azureSubscription: 'Azure subscription 1(bc7c051a-c439-4898-b227-d199d6240d8e)'
